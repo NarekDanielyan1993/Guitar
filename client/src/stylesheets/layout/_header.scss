@@ -1,0 +1,21 @@
+.header {
+    background: $primary-color-light;
+
+    &__logo {
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-white;
+    }
+
+    &__toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__nav-list {
+        flex-basis: 80%;
+        border-left: 1px solid white;
+    }
+}

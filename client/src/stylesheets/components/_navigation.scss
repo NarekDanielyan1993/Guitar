@@ -1,0 +1,21 @@
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid white;
+    }
+
+    &__item {
+    }
+
+    &__link {
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 0.4rem 1rem;
+        color: $color-white;
+        &--active {
+            color: blue;
+        }
+    }
+}

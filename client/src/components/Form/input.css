@@ -1,0 +1,25 @@
+.form-group {
+    flex-grow: 1;
+}
+
+.form-group__label {
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.form-group__control,
+.form-group__textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+    font: inherit;
+    padding: 0.25rem 0.5rem;
+}
+
+.form-group__control:focus,
+.form-group__textarea:focus {
+    outline: none;
+}

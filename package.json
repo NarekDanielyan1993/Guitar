@@ -1,0 +1,17 @@
+{
+  "name": "guitar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\" "
+  },
+  "author": "",
+  "license": "ISC"
+}

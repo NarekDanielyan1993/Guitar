@@ -1,0 +1,91 @@
+module.exports = {
+    plugins: ['react'],
+    parser: 'babel-eslint',
+    parserOptions: {
+        ecmaVersion: 8,
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true,
+            modules: true,
+            experimentalObjectRestSpread: true,
+        },
+    },
+    env: {
+        node: true,
+        browser: true,
+        es6: true,
+        jest: true,
+    },
+    extends: [
+        'eslint:recommended',
+        'plugin:react/recommended',
+        'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    ],
+    rules: {
+        'no-console': ['warn'],
+        'object-curly-spacing': ['error', 'always'],
+        'no-extra-parens': 'error',
+        'no-unused-vars': 'off',
+        'max-len': ['error', { code: 300 }],
+        'no-multi-spaces': 'error',
+        'react/prop-types': 0,
+    },
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
+    overrides: [
+        {
+            files: ['**/*.ts', '**/*.tsx'],
+            extends: [
+                'eslint:recommended',
+                'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+                'plugin:react/recommended',
+                'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+                'plugin:prettier/recommended',
+            ],
+            parser: '@typescript-eslint/parser',
+            parserOptions: {
+                project: path.resolve(__dirname, './tsconfig.json'),
+                tsconfigRootDir: __dirname,
+                sourceType: 'module',
+            },
+            plugins: ['@typescript-eslint'],
+            rules: {
+                '@typescript-eslint/adjacent-overload-signatures': 'error',
+                '@typescript-eslint/ban-ts-ignore': 'error',
+                '@typescript-eslint/ban-types': 'error',
+                '@typescript-eslint/camelcase': 'error',
+                '@typescript-eslint/class-name-casing': 'error',
+                '@typescript-eslint/consistent-type-assertions': 'error',
+                '@typescript-eslint/interface-name-prefix': 'error',
+                'no-array-constructor': 'off',
+                '@typescript-eslint/no-array-constructor': 'error',
+                'no-empty-function': 'off',
+                '@typescript-eslint/no-empty-function': 'error',
+                '@typescript-eslint/no-empty-interface': 'error',
+                '@typescript-eslint/no-explicit-any': 'warn',
+                '@typescript-eslint/no-inferrable-types': 'error',
+                '@typescript-eslint/no-misused-new': 'error',
+                '@typescript-eslint/no-namespace': 'error',
+                '@typescript-eslint/no-non-null-assertion': 'warn',
+                '@typescript-eslint/no-this-alias': 'error',
+                'no-use-before-define': 'off',
+                '@typescript-eslint/no-use-before-define': 'error',
+                '@typescript-eslint/no-var-requires': 'error',
+                '@typescript-eslint/prefer-namespace-keyword': 'error',
+                '@typescript-eslint/triple-slash-reference': 'error',
+                '@typescript-eslint/type-annotation-spacing': 'error',
+                'no-var': 'error',
+                'prefer-const': 'error',
+                'prefer-rest-params': 'error',
+                'prefer-spread': 'error',
+                '@typescript-eslint/no-unused-vars': 'warn',
+                '@typescript-eslint/member-delimiter-style': 'off',
+                '@typescript-eslint/explicit-function-return-type': 'error',
+                'react/prop-types': 'off',
+            },
+        },
+    ],
+};
